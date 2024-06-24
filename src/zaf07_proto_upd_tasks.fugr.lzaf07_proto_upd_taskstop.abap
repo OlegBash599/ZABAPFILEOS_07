@@ -1,0 +1,3 @@
+FUNCTION-POOL ZAF07_PROTO_UPD_TASKS.        "MESSAGE-ID ..
+
+* INCLUDE LZAF07_PROTO_UPD_TASKSD...         " Local class definition
