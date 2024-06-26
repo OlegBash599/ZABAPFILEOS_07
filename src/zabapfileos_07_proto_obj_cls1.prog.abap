@@ -397,16 +397,16 @@ CLASS lcl_app IMPLEMENTATION.
     SORT ms_chngdocs_tabs-s_proto-old_y.
     SORT ms_chngdocs_tabs-s_proto-new_x.
 
+    " cf_reca_storable=>get_change_indicator <- можно и этот способ использовать
+    " , но prepare - уже классика и лежит в пакете SCDO
     CALL FUNCTION 'CHANGEDOCUMENT_PREPARE_TABLES'
       EXPORTING
-*       check_indicator        = SPACE    " Flag whether tables are to be changed
-        tablename              = lv_tabname_proto_h    " Name of the table structure of the internal tables
-*       check_only_logflags    = SPACE    " Control Flag: Check Change Document-Relevant Fields Only
+        tablename              = lv_tabname_proto_h
       IMPORTING
-        result                 = lv_if_equal    " Flag whether tables are identical
+        result                 = lv_if_equal
       TABLES
-        table_new              = ms_chngdocs_tabs-s_proto-new_x    " Table contains the changed data
-        table_old              = ms_chngdocs_tabs-s_proto-old_y    " Table contains the unchanged data
+        table_new              = ms_chngdocs_tabs-s_proto-new_x
+        table_old              = ms_chngdocs_tabs-s_proto-old_y
       EXCEPTIONS
         nametab_error          = 1
         wrong_structure_length = 2
@@ -432,10 +432,6 @@ CLASS lcl_app IMPLEMENTATION.
           utime              = ms_write_doc_hdr-v_hdr_utime
           udate              = ms_write_doc_hdr-v_hdr_udate
           username           = ms_write_doc_hdr-v_hdr_username
-*         planned_change_number   = SPACE
-*         object_change_indicator = 'U'
-*         planned_or_real_changes = SPACE
-*         no_change_pointers = SPACE
           upd_ztaf07_proto_h = ms_chngdocs_tabs-s_proto-ch_ind
         TABLES
           icdtxt_zprototype  = ms_write_doc_hdr-t_cdtxt_tab
