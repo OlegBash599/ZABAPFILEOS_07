@@ -1,0 +1,38 @@
+post: http://localhost:50501/api/v1/api_frcstlist
+
+request - body
+{
+    "seltab" : [
+        {
+            "prod_id": "PROD01",
+            "frcst_date": "2024-06-07"
+        },
+        {
+            "prod_id": "PROD02",
+            "frcst_date": ""
+        }
+    ]
+}
+
+
+response:
+[
+    {
+        "prod_id": "PROD01",
+        "prod_name": "Первоклассный Полезный продукт",
+        "frcst_date": "2024-06-07",
+        "frcst_quan": 10
+    },
+    {
+        "prod_id": "PROD02",
+        "prod_name": "Полезный продукт",
+        "frcst_date": "2024-06-06",
+        "frcst_quan": 50
+    },
+    {
+        "prod_id": "PROD02",
+        "prod_name": "Полезный продукт",
+        "frcst_date": "2024-06-07",
+        "frcst_quan": 75
+    }
+]
