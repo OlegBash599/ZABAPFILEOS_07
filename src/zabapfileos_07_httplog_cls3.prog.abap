@@ -120,15 +120,11 @@ CLASS lcl_log IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD save_complex.
-
     DATA lv_json_http_info TYPE string.
     DATA lv_lognumb_ext TYPE balognr.
 
     lv_lognumb_ext = mo_msg_list->md_extnumber && mv_complex_counter.
     mv_complex_counter = mv_complex_counter + 1.
-
-
-
 
     lv_json_http_info =
     /ui2/cl_json=>serialize(
@@ -143,7 +139,6 @@ CLASS lcl_log IMPLEMENTATION.
 
     MESSAGE s004(zabfos_msg) WITH lv_lognumb_ext INTO sy-msgli.
     me->add_prev_msg( ).
-
   ENDMETHOD.
 
 ENDCLASS.

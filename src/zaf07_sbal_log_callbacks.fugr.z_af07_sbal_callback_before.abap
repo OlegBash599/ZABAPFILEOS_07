@@ -4,7 +4,6 @@ FUNCTION z_af07_sbal_callback_before.
 *"  CHANGING
 *"     REFERENCE(C_S_USER_COMMAND_DATA) TYPE  BAL_S_CBUC
 *"----------------------------------------------------------------------
-
   DATA lc_complex_data_mark TYPE string VALUE 'Complex save id:'.
   DATA lv_trg_id TYPE string.
   DATA lv_log_id_indx TYPE balognr.
@@ -20,7 +19,6 @@ FUNCTION z_af07_sbal_callback_before.
         REPLACE ALL  OCCURRENCES OF lc_complex_data_mark IN lv_trg_id WITH ''.
         CONDENSE lv_trg_id NO-GAPS.
         lv_log_id_indx = lv_trg_id.
-
 
         IMPORT http_call_json = lv_http_info_json
           FROM DATABASE bal_indx(al)
@@ -40,14 +38,8 @@ FUNCTION z_af07_sbal_callback_before.
           CATCH cx_root.
 
         ENDTRY.
-
-
-
       ENDIF.
-
-
     ENDIF.
   ENDIF.
-
 
 ENDFUNCTION.
