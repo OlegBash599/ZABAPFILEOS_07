@@ -9,3 +9,5 @@
 ### Pushkin's 225 Birthday
 < [AnnaK***](https://www.culture.ru/poems/5828/k-ya-pomnyu-chudnoe-mgnovene) >  < [CatchMoment_GlinkaPushkin](https://www.youtube.com/watch?v=AN5r-m6TjoU) > < [Beatles ANNA K*](https://www.youtube.com/watch?v=ew28ocAl-04) > 
 
+### Поясняющие дополнения
+[Статья про логирование на habr](https://habr.com/ru/articles/825214/)
